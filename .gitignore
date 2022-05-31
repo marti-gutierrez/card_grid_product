@@ -1,0 +1,7 @@
+# Archivos de imagenes por buenas practicas
+*.jpg
+*.jpeg
+*.png
+#carpetas de paquetes de node
+/node_modules
+/assets
