@@ -1,13 +1,27 @@
 .cards
 {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 40px;
 }
 .card
 {
+    /*
+    La siguiente es una forma de solucionar el problema del contenido
+    en la card
+    */
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 0 6px rgba(0,0,0,0.5);
     border-radius: 10px;
+    &:nth-of-type(2)
+    {
+        --url-image: url('../assets/img/2.jpg');
+    }
+    &:nth-of-type(3)
+    {
+        --url-image: url('../assets/img/3.jpg');
+    }
     &::before
     {
         display: block;
@@ -22,8 +36,41 @@
     }
     &__container
     {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 30px 20px;
         background-color: #fafafa;
         border-radius: 0 0 10px 10px;
+    }
+    &__name
+    {
+        margin-block-end: 10px;
+        font-size: 2.4rem;
+        text-align: center;
+    }
+    &__text
+    {
+        display: flex;
+        align-items: flex-start;
+        block-size: 100%;
+    }
+    &__copy
+    {
+        font-weight: 300;
+        margin-block-end: 30px;
+    }
+    &__cta
+    {
+        display: block;
+        inline-size: 200px;
+        margin: 0 auto;
+        padding: 15px 0;
+        border-radius: 6px;
+        background-color: var(--btn-color);
+        text-decoration: none;
+        text-align: center;
+        color: white;
     }
 }
