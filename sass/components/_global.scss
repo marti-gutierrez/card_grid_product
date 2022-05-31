@@ -1,6 +1,8 @@
 :root
 {
     --font: 'Inter',sans-serif;
+    --url-image: url('../assets/img/1.jpg');
+    --btn-color: #cc021C;
 }
 
 html
@@ -10,6 +12,17 @@ html
 
 body
 {
+    display: flex;
+    align-items: center;
+    min-block-size: 100vh;
+    padding: 20px 0;
     font-family: var(--font);
     font-size: 1.6rem;
+}
+
+.container
+{
+    inline-size: 90%;
+    max-inline-size: 1200px;
+    margin: 0 auto;
 }
